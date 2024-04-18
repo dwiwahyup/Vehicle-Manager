@@ -18,6 +18,6 @@ class IsDriver
         if (auth()->user()->roles === 'driver') {
             return $next($request);
         }
-        return redirect()->route('driver');
+        return redirect()->route('dashboard');
     }
 }

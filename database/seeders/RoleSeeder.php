@@ -15,27 +15,27 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => 'admin',
+            'name' => 'Fadhil Alkautsar',
             'email' => 'admin@gmail.com',
-            'password' => Hash::make('admin123'),
+            'password' => Hash::make('password'),
             'roles' => 'admin',
             'slug' => 'admin',
         ]);
 
         User::create([
-            'name' => 'leader',
-            'email' => 'leader@gmail.com',
-            'password' => Hash::make('leader123'),
-            'roles' => 'leader',
-            'slug' => 'leader',
+            'name' => 'Firman Dandi',
+            'email' => 'manager@gmail.com',
+            'password' => Hash::make('password'),
+            'roles' => 'manager',
+            'slug' => 'manager',
         ]);
 
         User::create([
-            'name' => 'driver',
-            'email' => 'driver@gmail.com',
-            'password' => Hash::make('driver123'),
-            'roles' => 'driver',
-            'slug' => 'driver',
+            'name' => 'Rizky Fauzi',
+            'email' => 'staff@gmail.com',
+            'password' => Hash::make('password'),
+            'roles' => 'staff',
+            'slug' => 'staff',
         ]);
     }
 }

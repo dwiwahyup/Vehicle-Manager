@@ -18,24 +18,44 @@
                     <span>Admin</span>
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('vehicles.index') }}">
+                    <i class="bi bi-person"></i>
+                    <span>Vehicle</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('drivers.index') }}">
+                    <i class="bi bi-person"></i>
+                    <span>Driver</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('bookings.index') }}">
+                    <i class="bi bi-person"></i>
+                    <span>Booking</span>
+                </a>
         @endif
 
         {{-- Menu for Leader --}}
-        @if (Auth::user()->roles === 'leader')
+        @if (Auth::user()->roles === 'manager')
             <li class="nav-item">
                 <a class="nav-link collapsed" href="">
                     <i class="bi bi-person"></i>
-                    <span>Leader</span>
+                    <span>Manager</span>
                 </a>
             </li>
         @endif
 
         {{-- Menu for Driver --}}
-        @if (Auth::user()->roles === 'driver')
+        @if (Auth::user()->roles === 'staff')
             <li class="nav-item">
                 <a class="nav-link collapsed" href="">
                     <i class="bi bi-person"></i>
-                    <span>Driver</span>
+                    <span>Staff</span>
                 </a>
             </li>
         @endif

@@ -34,6 +34,7 @@
     <!-- Template Main CSS File -->
     <link href="{{ url('assets/admin/css/style.css') }}" rel="stylesheet">
 
+
     <!-- =======================================================
   * Template Name: NiceAdmin
   * Updated: Jan 09 2024 with Bootstrap v5.3.2
