@@ -141,7 +141,7 @@
                                             labels: ['Freight Vehicles'],
                                             datasets: [{
                                                 label: 'Vehicle Count',
-                                                data: [{!! $countFreightVehicles !!}],
+                                                data: [{!! $countApprovedFreightVehicles !!}],
                                                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                                                 borderColor: 'rgb(255, 99, 132)',
                                                 borderWidth: 1
@@ -181,7 +181,7 @@
                                             labels: ['People Transport Vehicles'],
                                             datasets: [{
                                                 label: 'Vehicle Count',
-                                                data: [{!! $countPeopleTransportVehicles !!}],
+                                                data: [{!! $countApprovedPeopleTransportVehicles !!}],
                                                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                                                 borderColor: 'rgb(75, 192, 192)',
                                                 borderWidth: 1

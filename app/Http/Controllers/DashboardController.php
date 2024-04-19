@@ -33,13 +33,23 @@ class DashboardController extends Controller
             ->orWhere('approval_status_staff', 2)
             ->count();
 
-        $countPeopleTransportVehicles = Vehicle::where('type', 'People Transport Vehicles')->count();
-        $countFreightVehicles = Vehicle::where('type', 'Freight Vehicles')->count();
+        $countApprovedPeopleTransportVehicles = Vehicle::join('bookings', 'vehicles.id', '=', 'bookings.vehicle_id')
+            ->where('vehicles.type', 'People Transport Vehicles')
+            ->where('bookings.approval_status_manager', 1)
+            ->where('bookings.approval_status_staff', 1)
+            ->count();
+
+        $countApprovedFreightVehicles = Vehicle::join('bookings', 'vehicles.id', '=', 'bookings.vehicle_id')
+            ->where('vehicles.type', 'Freight Vehicles')
+            ->where('bookings.approval_status_manager', 1)
+            ->where('bookings.approval_status_staff', 1)
+            ->count();
+
 
 
         return view('dashboard.dashboard', [
-            'countPeopleTransportVehicles' => $countPeopleTransportVehicles,
-            'countFreightVehicles' => $countFreightVehicles,
+            'countApprovedPeopleTransportVehicles' => $countApprovedPeopleTransportVehicles,
+            'countApprovedFreightVehicles' => $countApprovedFreightVehicles,
 
             'countDriver' => $countDriver,
             'countAvailableDrivers' => $countAvailableDrivers,
