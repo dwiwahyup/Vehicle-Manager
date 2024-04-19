@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>PerpusResing</title>
+    <title>NiceAdmin</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -34,7 +34,7 @@
     <!-- Template Main CSS File -->
     <link href="{{ url('assets/admin/css/style.css') }}" rel="stylesheet">
 
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- =======================================================
   * Template Name: NiceAdmin
   * Updated: Jan 09 2024 with Bootstrap v5.3.2

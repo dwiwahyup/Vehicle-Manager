@@ -4,11 +4,11 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Vehicle Data</h1>
+            <h1>Driver Data</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Vehicle</li>
+                    <li class="breadcrumb-item active">Driver</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -19,7 +19,7 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Add Vehicle</h5>
+                            <h5 class="card-title">Add Driver</h5>
                             @if (session('success'))
                                 <div class="alert alert-success alert-dismissible fade show">
                                     <i class="bi bi-check-circle me-1"></i>
@@ -68,8 +68,8 @@
                                 <div class="col-md-4">
                                     <label for="inputState" class="form-label">Status</label>
                                     <select name="status" id="inputState" class="form-select">
-                                        <option value="0">Active/Avialable</option>
-                                        <option value="1">Booked</option>
+                                        <option value="1">Active/Avialable</option>
+                                        <option value="0">Booked</option>
                                         <option value="2">Inactive</option>
                                     </select>
                                 </div>

@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
             $table->bigInteger('driver_id');
             $table->bigInteger('vehicle_id');
+            $table->bigInteger('manager_id');
+            $table->bigInteger('staff_id');
             $table->string('approval_status_manager')->default('0');
             $table->string('approval_status_staff')->default('0');
-            $table->dateTime('pickup_date');
-            $table->dateTime('return_date');
+            $table->date('pickup_date');
+            $table->date('return_date');
             $table->string('fuel_consumption');
             $table->text('note')->nullable();
             $table->timestamps();

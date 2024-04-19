@@ -4,11 +4,11 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Booking Data</h1>
+            <h1>Approval Data</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Booking</li>
+                    <li class="breadcrumb-item active">Approval</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -19,7 +19,7 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Booking</h5>
+                            <h5 class="card-title">Approval</h5>
                             @if (session('success'))
                                 <div class="alert alert-success alert-dismissible fade show">
                                     <i class="bi bi-check-circle me-1"></i>
@@ -34,10 +34,7 @@
                                     {{ session('error') }}
                                 </div>
                             @endif
-                            <a href="{{ route('bookings.create') }}" type="button" class="btn btn-outline-primary">Add
-                                Booking</a>
 
-                            <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
                                     <tr>
@@ -105,18 +102,15 @@
 
                                             <td>{{ $booking->pickup_date }}</td>
                                             <td>{{ $booking->return_date }}</td>
-                                            <td>{{ $booking->fuel_consumption }}</td>
+                                            <td>{{ $booking->fuel_consumption }} Liter</td>
                                             <td>{{ $booking->note }}</td>
                                             <td>
-                                                <a href="{{ route('bookings.edit', $booking->id) }}"
-                                                    class="btn btn-outline-primary mr-3">Edit</a>
-                                                <form action="{{ route('bookings.destroy', $booking->id) }}" method="post"
-                                                    style="display: inline;">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <button type="submit" class="btn btn-outline-danger show_confirm"
-                                                        data-name="{{ $booking->name }}">Delete</button>
-                                                </form>
+                                                @if (Auth::user()->roles == 'manager' || Auth::user()->roles == 'staff')
+                                                    <a href="{{ route('approval.edit', $booking->id) }}"
+                                                        class="btn btn-outline-primary mr-3">Edit</a>
+                                                @else
+                                                    <a href="#" class="btn btn-outline-danger disabled">Can't Edit</a>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach
@@ -128,7 +122,6 @@
 
 
                             </table>
-                            <!-- End Table with stripped rows -->
 
                         </div>
                     </div>

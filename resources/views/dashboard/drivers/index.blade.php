@@ -4,7 +4,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Vehicle Data</h1>
+            <h1>Driver Data</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
@@ -45,7 +45,7 @@
                                             <b>Name </b>
                                         </th>
                                         <th>Phone Number</th>
-                                        <th>Addresh</th>
+                                        <th>Addres</th>
                                         <th>License Number</th>
                                         <th>Status</th>
                                         <th>Action</th>
@@ -55,7 +55,7 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Phone Number</th>
-                                        <th>Addresh</th>
+                                        <th>Addres</th>
                                         <th>License Number</th>
                                         <th>Status</th>
                                         <th>Action</th>
@@ -71,9 +71,9 @@
                                             {{-- <td>{{ $data->status }}</td> --}}
                                             {{-- if status 0 is active if 1 is not active if 2 is booked --}}
                                             <td>
-                                                @if ($data->status == 0)
+                                                @if ($data->status == 1)
                                                     <span class="badge bg-success">Active/Avialable</span>
-                                                @elseif($data->status == 1)
+                                                @elseif($data->status == 0)
                                                     <span class="badge bg-danger">Booked</span>
                                                 @else
                                                     <span class="badge bg-warning">Inactive</span>

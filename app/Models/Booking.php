@@ -11,9 +11,10 @@ class Booking extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
         'driver_id',
         'vehicle_id',
+        'manager_id',
+        'staff_id',
         'approval_status_manager',
         'approval_status_staff',
         'pickup_date',
@@ -21,6 +22,7 @@ class Booking extends Model
         'fuel_consumption',
         'note',
     ];
+
 
     public function driver()
     {

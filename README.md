@@ -1,66 +1,74 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Vehicle Manager
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi ini merupakan sebuah platform pemesanan kendaraan yang di gunakan untuk menunjang perusaaahn dalam proses pemesanan kendaraan. Pada aplikasi ini menggunakan 3 roles yang terdiri dari Admin, Manager, dan Staff.
 
-## About Laravel
+## Spesifikasi Aplikasi
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   PHP 8.1.10
+-   Laravel 10
+-   MySQL Database
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Fitur Aplikasi
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   Pemesanan Kendaraan: Admin dapat membuat pemesanan kendaraan yang include dengan (memilih driver, memilih kendaraan, serta memilih pihak yang akan melakukan persetujuan (dalam hal ini adalah manager dan staff))
+-   Persetujuan Bertinkat: Persetujuan pemesanan dilakukan secara bertingkat oleh Staff dan Manager.
+-   Dashboard dan Grafik: Berisi informasi yang memuat grafik pemakaian kendaraan.
 
-## Learning Laravel
+### Role Aplikasi
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Admin
+2. Manager
+3. Staff
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+#### Admin
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   Email:admin@gmail.com
+-   Username:Fadhil Alkautsar
+-   Password:password
 
-## Laravel Sponsors
+#### Manager
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+-   Email:staff@gmail.com
+-   Name:Firman Dandi
+-   Password:password
 
-### Premium Partners
+#### Staff
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+-   Email:handayani.cecep@example.com
+-   Name:Rizky Fauzi
+-   Password:password
 
-## Contributing
+Note: Semua akun passwordnya sama yaitu "password"
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Cara Menggunakan
 
-## Code of Conduct
+### 1. Admin
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+-   Masuk ke aplikasi menggunakan akun Admin.
+-   Buat pemesanan kendaraan dengan mengisi form yang telah di sediakan.
+-   Simpan pemesanan.
 
-## Security Vulnerabilities
+### 2. Supervisor
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+-   Apabila sudah terdapat pemesanan kendaraan, login menggunakan akun Manager.
+-   Masuk pada halman Approval untuk cek status pemesanan. Anda bisa menyetujui dan menolak pesanan.
 
-## License
+### 3. Employee
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+-   Masuk ke aplikasi sebagai Staff.
+-   Masuk pada halman Approval untuk cek status pemesanan. Anda bisa menyetujui dan menolak pesanan.
+
+### 4. Dashboard dan Grafik
+
+-   Halaman dashboard yang menampilkan informasi mengenai data kendaraan, driver, dan data booking kendaraan.
+-   Grafik dapat menampilkan data kendaraan yang terpakai.
+
+## Instalasi
+
+1. Clone repositori ini ke direktori lokal Anda.
+2. Salin file `.env.example` menjadi `.env` dan atur konfigurasi database.
+3. Jalankan perintah `composer install` untuk menginstal dependensi.
+4. Jalankan perintah `php artisan key:generate` untuk menghasilkan kunci aplikasi.
+5. Jalankan migrasi database dengan perintah `php artisan migrate`.
+6. Jalankan perintah `php artisan db:seed` untuk memasukkan akun kedalam aplikasi.
+7. Jalankan server dengan perintah `php artisan serve`.

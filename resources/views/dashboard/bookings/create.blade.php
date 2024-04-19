@@ -35,15 +35,14 @@
                                 </div>
                             @endif
 
-                            <form action="{{ route('drivers.store') }}" method="post" enctype="multipart/form-data"
+                            <form action="{{ route('bookings.store') }}" method="post" enctype="multipart/form-data"
                                 class="row g-3">
                                 @csrf
 
 
-                                {{-- driver --}}
                                 <div class="col-md-4">
                                     <label for="inputState" class="form-label">Driver</label>
-                                    <select name="status" id="inputState" class="form-select">
+                                    <select name="driver_id" id="inputState" class="form-select">
                                         <option value="">Choose Driver</option>
                                         @foreach ($driver as $driver)
                                             <option value="{{ $driver->id }}">{{ $driver->name }}</option>
@@ -66,7 +65,7 @@
 
                                 <div class="col-md-4">
                                     <label for="inputState" class="form-label">Manager</label>
-                                    <select name="status" id="inputState" class="form-select">
+                                    <select name="manager_id" id="inputState" class="form-select">
                                         <option value="">Choose Manager</option>
                                         @foreach ($manager as $manager)
                                             <option value="{{ $manager->id }}">{{ $manager->name }}</option>
@@ -75,7 +74,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputState" class="form-label">Staff</label>
-                                    <select name="status" id="inputState" class="form-select">
+                                    <select name="staff_id" id="inputState" class="form-select">
                                         <option value="">Choose Staff</option>
                                         @foreach ($staff as $staff)
                                             <option value="{{ $staff->id }}">{{ $staff->name }}</option>
